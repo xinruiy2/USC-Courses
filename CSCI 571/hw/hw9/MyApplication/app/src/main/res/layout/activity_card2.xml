@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/SellerInfoTitle"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:text="Seller Information"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/blackColor"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/Feedback"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/SellerInfoTitle"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="•Feedback Score:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/FeedbackRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/SellerInfoTitle"
+        android:layout_toRightOf="@id/Feedback"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/UserID"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/Feedback"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="•User ID:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/UserIDRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/Feedback"
+        android:layout_toRightOf="@id/UserID"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/PositiveFeedback"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/UserID"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="•Positive Feedback Percentage:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/PositiveFeedbackRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/UserID"
+        android:layout_toRightOf="@id/PositiveFeedback"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/FeedbackRate"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/PositiveFeedback"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="•Feedback Rating Star:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/FeedbackRateRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/PositiveFeedback"
+        android:layout_toRightOf="@id/FeedbackRate"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <View
+        android:id="@+id/hoLine1"
+        android:layout_below="@id/FeedbackRateRet"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+
+    <TextView
+        android:id="@+id/ReturnPolicyTitle"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hoLine1"
+        android:layout_marginTop="-2dp"
+        android:paddingTop="15dp"
+        android:text="Return Policies"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/blackColor"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/Refund"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/ReturnPolicyTitle"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="•Refund:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/RefundRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/ReturnPolicyTitle"
+        android:layout_toRightOf="@id/Refund"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/returnWithin"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/Refund"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="•Return Within:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/returnWithinRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/Refund"
+        android:layout_toRightOf="@id/returnWithin"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/ShippingCostPaid"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/returnWithin"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="•Shipping Cost Paid By:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/ShippingCostPaidRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/returnWithin"
+        android:layout_toRightOf="@id/ShippingCostPaid"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Buyer"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/returnAccept"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/ShippingCostPaid"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="•Returns Accepted:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/returnAcceptRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/ShippingCostPaid"
+        android:layout_toRightOf="@id/returnAccept"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Returns Accepted"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+
+
+</RelativeLayout>

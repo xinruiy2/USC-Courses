@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="search_name">eBay Category Search</string>
+    <string name="result_name">Search Results</string>
+    <string name="title_activity_card">CardActivity</string>
+    <string name="tab_text_1">PRODUCT</string>
+    <string name="tab_text_2">SELLER INFO</string>
+    <string name="tab_text_3">SHIPPING</string>
+</resources>

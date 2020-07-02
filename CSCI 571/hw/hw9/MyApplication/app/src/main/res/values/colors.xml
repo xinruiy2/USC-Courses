@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d97855</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBackground">#0063D1</color>
+    <color name="searchTextColor">#0000FF</color>
+    <color name="colorButton">#1569C7</color>
+    <color name="colorWarning">#FF0000</color>
+    <color name="colorSearchBackground">#FFFFFF</color>
+    <color name="progressBarColor">#EE82EE</color>
+    <color name="wordInSearch">#C0C0C0</color>
+    <color name="blackColor">#000000</color>
+    <color name="blueColor">#87CEFA</color>
+    <color name="GreenColor">#7FFF00</color>
+    <color name="splashScreen">#3b68ee</color>
+</resources>

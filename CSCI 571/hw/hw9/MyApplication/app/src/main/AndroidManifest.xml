@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".CardActivity"
+            android:label="Testing"
+            android:screenOrientation="portrait"
+            android:theme="@style/SearchTheme"/>
+
+        <activity
+            android:name=".BasicActivity"
+            android:label="@string/search_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SearchTheme" />
+
+        <activity
+            android:name=".ResultActivity"
+            android:label="@string/result_name"
+            android:parentActivityName=".BasicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SearchTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

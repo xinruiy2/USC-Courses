@@ -1,0 +1,588 @@
+<html>
+    
+<style>
+    .center {
+        display: block;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+
+    th,td {
+      font-size: 170%;
+      border: 1px solid black;
+      text-align: center;
+    }
+    
+    select {
+        width: 200px;
+        height: 27px;
+        vertical-align:text-bottom;  
+    }
+    
+    input.text{
+        width: 200px;
+        height: 27px;
+        vertical-align:text-bottom;
+    }
+    
+    input.textRange{
+        width: 50px;
+        height: 27px;
+        vertical-align:text-bottom;
+    }
+    
+    input.checkbox{
+        width: 20px;
+        height: 20px;
+        vertical-align:text-bottom;
+    }
+    
+    .submitBotton{
+        width: 60px;
+        height: 25px;
+        tab-size: 30px;
+        vertical-align:middle;
+    }
+    
+    input[type="submit"]:hover, input[type="reset"]:hover {
+                cursor:pointer;
+                background-color: chartreuse;
+    }
+    
+
+    input[type=number]::-webkit-inner-spin-button {
+        opacity: 1
+    }
+    
+    
+    
+    
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    button:hover {
+                cursor:pointer;
+                background-color: chartreuse;
+    }
+    
+    .shape{
+          width: 1200px;
+          margin-left: auto;
+          margin-right:auto;
+          margin-bottom: 5px;
+          border: 1px solid black;
+          background-color: #e7e7e7;
+          border-radius: 5px;
+          text-align: left;
+          font-size: 18px
+    }
+    
+    .shape:hover{
+        box-shadow:0 0 10px #999;
+    }
+    
+    button{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    img.pic{
+        border-color:darkgray;
+        width: 120px;
+        height: 120px;
+        margin-left:30px;
+        margin-top:20px;
+        margin-right: 30px;
+        float: left;
+    }
+    
+    img.pic:hover{
+        transform: scale(1.5); 
+    }
+    
+    B.s1{
+        margin-left: 50px;
+    }
+    
+    B.s2{
+        margin-left: 180px;
+    }
+    
+    B.s3{
+        margin-left: 50px;
+        font-weight: normal;
+    }
+    
+     B.s4{
+        margin-left: 180px;
+        font-weight: normal;
+    }
+    
+    div.all{
+        display: none;
+    }
+        
+    
+    
+</style>    
+    
+    
+<head> 
+    <script type="text/javascript">      
+        
+        function myfunc(input){
+            let cl = document.getElementById("close" + input.toString());
+            let part = document.getElementById("smhide" + input.toString());
+            let lc = document.getElementById("loc" + input.toString());
+            if(part.style.display == "none"){
+                cl.style.display = "block";
+                part.style.display = "block";
+                lc.style.display = "block";
+            }else{
+                cl.style.display = "none";
+                part.style.display = "none";
+                lc.style.display = "none";
+            }
+        }
+        
+        function myFunction() {
+          var x = document.getElementById("myDIV");
+          var z = document.getElementById("myHDIV");
+          var y = document.getElementById("showClick");
+          if (x.style.display === "none") {
+              y.innerHTML = "Show Less";
+              z.style.display = "block";
+              x.style.display = "block";
+              window.scrollTo(0, 4000);
+          } else {
+              window.scrollTo(0, 0);
+              y.innerHTML = "Show More";
+              z.style.display = "none";
+              x.style.display = "none";
+              window.scrollTo(0, 0);
+          }
+        }
+        
+        function hideall(){
+            var k = document.getElementById("hDIV");
+            var t = document.getElementById("allDIV");
+            k.style.display = "none";
+            t.style.display = "none";
+        }
+        
+        
+        function myfunction(){
+            var min_price = document.getElementById("minprice").value;
+            var max_price = document.getElementById("maxprice").value;
+            var keyword = document.getElementById("fname").value;
+            if(min_price == ""){
+                if(max_price != "" && max_price <0){
+                    alert("Price Range values cannot be negative! Please try a value greater than or equal to 0.0");
+                    return;
+                }else{  
+                }
+            }else{
+                if(min_price < 0){
+                    alert("Price Range values cannot be negative! Please try a value greater than or equal to 0.0");
+                    return;
+                }else{
+                    if(max_price != ""){
+                        if(max_price < 0){
+                            alert("Price Range values cannot be negative! Please try a value greater than or equal to 0.0");
+                            return;
+                        }else if(parseFloat(max_price) < parseFloat(min_price)){
+                            alert("Oops! Lower price limit cannot be greater than upper price limit! Please try agian.");
+                            return;
+                        }
+                    }else{   
+                    }
+                }
+            }
+            
+            var url = "/second?fname="+keyword+"&minprice=";
+			if (document.getElementById("minprice").value != ""){
+				url += document.getElementById("minprice").value
+			} 
+			url += "&maxprice="
+			if (document.getElementById("maxprice").value != ""){
+				url += document.getElementById("maxprice").value
+			} 
+			if (document.getElementById("New").checked){
+				url+="&New=yes"
+			}
+			if (document.getElementById("Used").checked){
+				url+="&Used=yes"
+			}
+			if (document.getElementById("VeryGood").checked){
+				url+="&VeryGood=yes"
+			}
+			if (document.getElementById("Good").checked){
+				url+="&Good=yes"
+			}
+			if (document.getElementById("Acceptable").checked){
+				url+="&Acceptable=yes"
+			}
+			if (document.getElementById("Return").checked){
+				url+="&Return=yes"
+			}
+			if (document.getElementById("Free").checked){
+				url+="&Free=yes"
+			}
+			if (document.getElementById("Expedited").checked){
+				url+="&Expedited=yes"
+			}
+			if (document.getElementById("sortby").value == "Best Match" ){
+				url+="&sortby=Best+Match"
+			}
+			else if (document.getElementById("sortby").value == "Price: highest first"){
+				url+="&sortby=Price%3A+highest+first"
+			}
+			else if (document.getElementById("sortby").value == "Price + Shipping: highest first"){
+				url+="&sortby=Price+%2B+Shipping%3A+highest+first"
+			}
+			else if (document.getElementById("sortby").value == "Price + Shipping: highest first"){
+				url+="&sortby=Price+%2B+Shipping%3A+highest+first"
+			}
+			else if (document.getElementById("sortby").value == "Price + Shipping: lowest first"){
+				url+="&sortby=Price+%2B+Shipping%3A+lowest+first"
+			}
+//            document.getElementById("counter").innerHTML = url
+			fetch(url)
+				.then(response => response.json())
+				//process the data
+				.then(jsonData=>{
+					items = jsonData.findItemsAdvancedResponse[0].searchResult[0].item
+//					document.getElementById("counter").innerHTML = items[0].title[0]
+                    var totalnum = jsonData.findItemsAdvancedResponse[0].paginationOutput[0].totalEntries[0]
+                    if(totalnum == 0){
+                        document.getElementById("totalnum").innerHTML = "No Results found"
+                        var k = document.getElementById("hDIV");
+                        k.style.display = "block";  
+                        return; 
+                    }else{
+                        document.getElementById("totalnum").innerHTML = totalnum.toString() + " Results found"
+                        var k = document.getElementById("hDIV");
+                        var t = document.getElementById("allDIV");
+                        k.style.display = "block";
+                        t.style.display = "block";
+                    }
+                    for(i = 0; i<10; i++){
+                        if(items[i].galleryURL[0] == null){
+                            document.getElementById("image"+ i.toString()).src = "notfound.jpg"
+                        }else{
+                            document.getElementById("image"+ i.toString()).src = items[i].galleryURL[0];   
+                        }
+                        document.getElementById("title" + i.toString()).innerHTML = items[i].title[0];
+                        document.getElementById("titleh" + i.toString()).href = items[i].viewItemURL[0];
+                        document.getElementById("iconh" + i.toString()).href = items[i].viewItemURL[0];
+                        document.getElementById("category" + i.toString()).innerHTML = items[i].primaryCategory[0].categoryName[0]
+                        
+                        if(items[i].condition){
+                            document.getElementById("condition" + i.toString()).innerHTML = "Condition: " + items[i].condition[0].conditionDisplayName[0];
+                        }else{
+                            document.getElementById("condition" + i.toString()).innerHTML = "Condition: New";
+                        }
+                        
+                        
+                        if(items[i].returnsAccepted[0] == "false"){
+                            document.getElementById("ret" + i.toString()).innerHTML = "does not accept returns"
+                        }else{
+                            document.getElementById("ret" + i.toString()).innerHTML = "accepts"
+                        }
+                        
+                        document.getElementById("price" + i.toString()).innerHTML = "Price: $" + items[i].sellingStatus[0].convertedCurrentPrice[0].__value__
+                        
+                        document.getElementById("loc" + i.toString()).innerHTML = "From " + items[i].location[0]
+                        
+                        var ship = ""
+                        var shipcost = 0
+                        if(items[i].shippingInfo){
+                            if(items[i].shippingInfo[0].shippingServiceCost){
+                                shipcost = items[i].shippingInfo[0].shippingServiceCost[0].__value__
+                            }
+                        }
+                        
+                        if(shipcost == 0){
+                            ship += "Free Shipping"
+                        }else{
+                            ship += "No Free Shipping" 
+                            document.getElementById("price" + i.toString()).innerHTML += "(+ $" + shipcost + " for shipping)"
+                        }
+                        
+                        if(items[i].shippingInfo[0].expeditedShipping[0] == true){
+                            ship += "-- Expedited Shipping available"
+                        }
+                        document.getElementById("ship"+i.toString()).innerHTML = ship
+                    }
+                    
+                    
+				})
+				.catch(function(err){alert(err)});
+               
+        }
+        
+        
+    </script>   
+</head>
+
+    <body>
+        
+    <H1><a href = "https://www.ebay.com"> <img src="header.png" class = "center"> </a> </H1>
+
+
+    <table>
+        <form id = "inputInfo" method="GET" onsubmit="myfunction(); return false">
+            <tr><td><B><label for="fname">Key Words</label> <span style="color:red;">*</span>:</B> <input type="text" id="fname" name="fname" class = "text" required></td></tr>
+
+
+        <tr><td> <B>Price Range:</B> From <input type="number" id="minprice" name="minprice" class = "textRange" step="0.01"> to <input type="number" id="maxprice" name="maxprice" class = "textRange" step="0.01"> </td></tr>
+
+
+        <tr><td> <B>Condition:</B>
+            <input type="checkbox" id="New" name="New" class = "checkbox"> New
+            <input type="checkbox" id="Used" name="Used" class = "checkbox"> Used
+            <input type="checkbox" id="VeryGood" name="VeryGood" class = "checkbox"> Very Good
+            <input type="checkbox" id="Good" name="Good" class = "checkbox"> Good
+            <input type="checkbox" id="Acceptable" name="Acceptable" class = "checkbox"> Acceptable
+
+        </td></tr>
+
+
+            <tr><td> <B>Seller:</B> <input type="checkbox" id="Return" name="Return" class = "checkbox"> Return Accpected </td></tr>
+
+
+            <tr><td> <B>Shipping:</B> <input type="checkbox" id="Free" name="Free" class = "checkbox"> Free  <input type="checkbox" id="Expedited" name="Expedited" class = "checkbox"> Expedited</td></tr>
+
+
+        <tr><td> <B>Sort by:</B>   
+            <select name="sortby" id="sortby">
+                <option value="Best Match">Best Match</option>
+                <option value="Price: highest first">Price: highest first</option>
+                <option value="Price + Shipping: highest first">Price + Shipping: highest first</option>
+                <option value="Price + Shipping: lowest first">Price + Shipping: lowest first</option>
+            </select>
+        </td></tr>
+
+
+        <tr><td> <input type="reset" value="Clear" class = "submitBotton" onclick = "hideall()"> <input type="submit" value="Search" class = "submitBotton">
+            </td></tr>
+        </form>
+    </table>
+ 
+    <div id = "hDIV" style = "display: none">
+        <div ID = "counter"> </div>
+        <center><B ID = "totalnum" style = "font-size: 35px;"></B></center>
+        <hr align="center" width="50%">
+        </div>     
+    <div id = "allDIV" style= "display: none">  
+        <FIELDSET class = "shape" onclick = "myfunc(0)">
+            <span id="close0" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image0" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh0" target="_blank"> <B ID = "title0"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category0"></I><A ID = "iconh0" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition0"></span><img id="tr0" src="/static/topRatedImage.png" style="display:inline-block; width:22px; height:30px; display:none"></p>
+                <div ID = "smhide0" style = "display: none;">
+                <p> Seller <B ID = "ret0"></B> return </p>
+                <p ID = "ship0"></p>
+                </div>
+                <p><B ID = "price0" style = "float: left"> </B> <I ID = "loc0" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+        <FIELDSET class = "shape" onclick = "myfunc(1)">
+            <span id="close1" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image1" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh1" target="_blank"> <B ID = "title1"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category1"></I><A ID = "iconh1" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition1"></span></p>
+                <div ID = "smhide1" style = "display: none;">
+                <p> Seller <B ID = "ret1"></B> return </p>
+                <p ID = "ship1"></p>
+                </div>
+                <p><B ID = "price1" style = "float: left" style = "float: left"> </B> <I ID = "loc1" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+        <FIELDSET class = "shape" onclick = "myfunc(2)">
+            <span id="close2" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image2" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh2" target="_blank"> <B ID = "title2"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category2"></I><A ID = "iconh2" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition2"></span></p>
+                <div ID = "smhide2" style = "display: none;">
+                <p> Seller <B ID = "ret2"></B> return </p>
+                <p ID = "ship2"></p>
+                </div>
+                <p><B ID = "price2" style = "float: left"> </B> <I ID = "loc2" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+        <FIELDSET class = "shape" onclick = "myfunc(3)">
+            <span id="close3" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image3" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh3" target="_blank"> <B ID = "title3"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category3"></I><A ID = "iconh3" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition3"></span></p>
+                <div ID = "smhide3" style = "display: none;">
+                <p> Seller <B ID = "ret3"></B> return </p>
+                <p ID = "ship3"></p>
+                </div>
+                <p><B ID = "price3" style = "float: left"> </B> <I ID = "loc3" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+        <FIELDSET class = "shape" onclick = "myfunc(4)">
+            <span id="close4" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image4" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh4" target="_blank"> <B ID = "title4"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category4"></I><A ID = "iconh4" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition4"></span></p>
+                <div ID = "smhide4" style = "display: none;">
+                <p> Seller <B ID = "ret4"></B> return </p>
+                <p ID = "ship4"></p>
+                </div>
+                <p><B ID = "price4" style = "float: left"> </B> <I ID = "loc4" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+        
+        <div id = "myDIV" style = "display: none">
+            
+        <FIELDSET class = "shape" onclick = "myfunc(5)">
+            <span id="close5" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image5" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh5" target="_blank"> <B ID = "title5"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category5"></I><A ID = "iconh5" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition5"></span></p>
+                <div ID = "smhide5" style = "display: none;">
+                <p> Seller <B ID = "ret5"></B> return </p>
+                <p ID = "ship5"></p>
+                </div>
+                <p><B ID = "price5" style = "float: left"> </B> <I ID = "loc5" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+        <FIELDSET class = "shape" onclick = "myfunc(6)">
+            <span id="close6" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image6" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh6" target="_blank"> <B ID = "title6"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category6"></I><A ID = "iconh6" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition6"></span></p>
+                <div ID = "smhide6" style = "display: none;">
+                <p> Seller <B ID = "ret6"></B> return </p>
+                <p ID = "ship6"></p>
+                </div>
+                <p><B ID = "price6" style = "float: left"> </B> <I ID = "loc6" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+        <FIELDSET class = "shape" onclick = "myfunc(7)">
+            <span id="close7" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image7" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh7" target="_blank"> <B ID = "title7"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category7"></I><A ID = "iconh7" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition7"></span></p>
+                <div ID = "smhide7" style = "display: none;">
+                <p> Seller <B ID = "ret7"></B> return </p>
+                <p ID = "ship7"></p>
+                </div>
+                <p><B ID = "price7" style = "float: left"> </B> <I ID = "loc7" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+        <FIELDSET class = "shape" onclick = "myfunc(8)">
+            <span id="close8" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image8" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh8" target="_blank"> <B ID = "title8"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category8"></I><A ID = "iconh8" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition8"></span></p>
+                <div ID = "smhide8" style = "display: none;">
+                <p> Seller <B ID = "ret8"></B> return </p>
+                <p ID = "ship8"></p>
+                </div>
+                <p><B ID = "price8" style = "float: left"> </B> <I ID = "loc8" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+        <FIELDSET class = "shape" onclick = "myfunc(9)">
+            <span id="close9" style="float:right; cursor: pointer; pointer-events: none; display: none;">❌</span>
+            <img class = "pic" ID = "image9" border="2"> 
+            <div style="display: inline-block; vertical-align: baseline">
+                <br>
+                <A ID = "titleh9" target="_blank"> <B ID = "title9"> </B></A>
+                <br>
+                <p><span> </span><I ID = "category9"></I><A ID = "iconh9" target="_blank"> <img src="redirect.png" width= "15px"><STYLE>A {text-decoration: none;} </STYLE> </A>
+                <p><span ID="condition9"></span></p>
+                <div ID = "smhide9" style = "display: none;">
+                <p> Seller <B ID = "ret9"></B> return </p>
+                <p ID = "ship9"></p>
+                </div>
+                <p><B ID = "price9" style = "float: left"> </B> <I ID = "loc9" style = "display: none;"></I></p>
+            </div>
+
+        </FIELDSET>
+
+            
+        </div>
+        <button id="showClick" onclick="myFunction()"> Show More </button>
+
+        <div id = "myHDIV" style="display: none"><hr id = "myHDIV" align="center" width="50%"></div>
+    
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+

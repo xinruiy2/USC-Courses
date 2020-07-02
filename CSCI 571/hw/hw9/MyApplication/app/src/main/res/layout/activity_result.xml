@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swiperefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout">
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/progressBarColor"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/progressBarWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar"
+        android:layout_centerInParent="true"
+        android:textColor="@color/wordInSearch"
+        android:text="Searching Products..."
+        android:textSize="15dp"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/noResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/wordInSearch"
+        android:text="No Records"
+        android:textSize="15dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/line_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Showing"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/line_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/line_1"
+        android:text=""
+        android:textColor="@color/blueColor"
+        android:textSize="15dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/line_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/line_2"
+        android:text="results for"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/line_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/line_3"
+        android:text=""
+        android:textColor="@color/blueColor"
+        android:textSize="15dp"
+        android:visibility="gone"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_below="@id/line_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

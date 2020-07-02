@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSearchBackground"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:id="@+id/fname"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keyword"
+        android:paddingTop="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/searchTextColor"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace" />
+
+    <EditText
+        android:id="@+id/keywords"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_below="@id/fname"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:ems="10"
+        android:hint="Enter Keyword"
+        android:theme="@style/MyEditText"/>
+
+    <TextView
+        android:id="@+id/keywordWarning"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/keywords"
+        android:visibility="gone"
+        android:paddingTop="10dp"
+        android:text="Please enter mandatory field"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorWarning"
+        android:textSize="15dp"
+        app:fontFamily="monospace" />
+
+
+    <TextView
+        android:id="@+id/pRange"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/keywordWarning"
+        android:layout_marginTop="0dp"
+        android:paddingTop="10dp"
+        android:text="Price Range"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/searchTextColor"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace" />
+
+    <EditText
+        android:id="@+id/minPrice"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/pRange"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Minimum Price"
+        android:paddingTop="15dp"
+        android:theme="@style/MyEditText" />
+
+    <EditText
+        android:id="@+id/maxPrice"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/pRange"
+        android:layout_toRightOf="@id/minPrice"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Maximum Price"
+        android:paddingTop="15dp"
+        android:theme="@style/MyEditText" />
+
+    <TextView
+        android:id="@+id/priceWarning"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_below="@id/maxPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter valid price values"
+        android:visibility="gone"
+        android:textColor="@color/colorWarning"
+        android:paddingTop="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="15dp"
+        app:fontFamily="monospace" />
+
+    <TextView
+        android:id="@+id/condition"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceWarning"
+        android:layout_marginTop="0dp"
+        android:paddingTop="10dp"
+        android:text="Condition"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/searchTextColor"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace" />
+
+    <CheckBox android:id="@+id/check_new"
+        android:layout_below="@id/condition"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:text="New"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox android:id="@+id/check_used"
+        android:layout_below="@id/condition"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/check_new"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:text="Used"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox android:id="@+id/check_unspecified"
+        android:layout_below="@id/condition"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/check_used"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:text="Unspecified"
+        android:onClick="onCheckboxClicked"/>
+
+    <TextView
+        android:id="@+id/sortby"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/check_new"
+        android:paddingTop="10dp"
+        android:text="Sort By"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/searchTextColor"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="monospace" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_below="@id/sortby"
+        android:paddingTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:background="@color/colorButton"
+        android:layout_gravity="center"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/colorSearchBackground"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:text="Submit" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/submit"
+        android:layout_below="@id/spinner"
+        android:background="@color/colorButton"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/colorSearchBackground"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:text="Clear" />
+
+</RelativeLayout>

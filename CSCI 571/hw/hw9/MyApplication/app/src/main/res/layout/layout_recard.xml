@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:layout_width="180dp"
+    android:layout_height="300dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="8dp">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:src="@drawable/ebay_default"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text=""
+            android:textColor ="@color/blackColor"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/shippingBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop ="4dp"
+            android:layout_marginLeft="3dp"
+            android:text="Ships for"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/shipping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop ="4dp"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/shippingBefore"
+            android:layout_below="@id/title"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/shippingAfter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop ="4dp"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/shipping"
+            android:layout_below="@id/title"
+            android:text="Shipping"
+            />
+
+
+        <TextView
+            android:id="@+id/topRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_below="@id/shipping"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="condition"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="Price"
+            android:textColor="@color/GreenColor"
+            android:textSize="12dp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

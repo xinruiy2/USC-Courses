@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/scrollId">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id = "@+id/image1"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:background="#c1c1c1"
+                android:src="@drawable/ebay_default" />
+
+            <ImageView
+                android:id = "@+id/image2"
+                android:layout_width="300dp"
+                android:background="#c1c1c1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ebay_default"/>
+            <ImageView
+                android:id = "@+id/image3"
+                android:layout_width="300dp"
+                android:background="#c1c1c1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ebay_default"/>
+            <ImageView
+                android:id = "@+id/image4"
+                android:layout_width="300dp"
+                android:background="#c1c1c1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ebay_default"/>
+            <ImageView
+                android:id = "@+id/image5"
+                android:layout_width="300dp"
+                android:background="#c1c1c1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ebay_default"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scrollId"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text=""
+        android:textColor ="@color/blackColor"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/itemPrice"
+        android:layout_width="79dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemTitle"
+        android:layout_marginTop="4dp"
+        android:text="Price"
+        android:textColor="@color/GreenColor"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/shippingBefore"
+        android:layout_toRightOf="@+id/itemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemTitle"
+        android:layout_marginTop ="6dp"
+        android:layout_marginLeft="3dp"
+        android:text="Ships for"
+        android:textSize="12dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/shipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop ="6dp"
+        android:layout_marginLeft="3dp"
+        android:textSize="12dp"
+        android:layout_toRightOf="@+id/shippingBefore"
+        android:layout_below="@id/itemTitle"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/shippingAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop ="6dp"
+        android:layout_marginLeft="3dp"
+        android:textSize="12dp"
+        android:layout_toRightOf="@+id/shipping"
+        android:layout_below="@id/itemTitle"
+        android:text="Shipping"
+        android:visibility="gone"
+        />
+
+    <View
+        android:id="@+id/hoLine2"
+        android:layout_below="@id/itemPrice"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+    <ImageView
+        android:id="@+id/iconproductFeatureTitle"
+        android:paddingTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hoLine2"
+        android:src="@drawable/information"
+        />
+
+    <TextView
+        android:id="@+id/productFeatureTitle"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hoLine2"
+        android:layout_toRightOf="@id/iconproductFeatureTitle"
+        android:layout_marginTop="-2dp"
+        android:paddingTop="15dp"
+        android:text="Product Feature"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/blackColor"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/Brand"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/productFeatureTitle"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="5dp"
+        android:text="Brand"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/BrandRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/productFeatureTitle"
+        android:layout_toRightOf="@id/Brand"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Unbranded/Generic"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <View
+        android:id="@+id/hoLine3"
+        android:layout_below="@id/BrandRet"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+    <ImageView
+        android:id="@+id/iconSpecificationTitle"
+        android:paddingTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hoLine3"
+        android:src="@drawable/wrench"
+        />
+
+    <TextView
+        android:id="@+id/SpecificationTitle"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hoLine3"
+        android:layout_toRightOf="@id/iconSpecificationTitle"
+        android:layout_marginTop="-2dp"
+        android:paddingTop="15dp"
+        android:text="Specifications"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/blackColor"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/seeDetails1"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/SpecificationTitle"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="5dp"
+        android:text="•See detail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/seeDetails2"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/seeDetails1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="5dp"
+        android:text="•See detail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/seeDetails3"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/seeDetails2"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="5dp"
+        android:text="•See detail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/seeDetails4"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/seeDetails3"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="5dp"
+        android:text="•See detail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/seeDetails5"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/seeDetails4"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="5dp"
+        android:text="•See detail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+</RelativeLayout>
+</ScrollView>

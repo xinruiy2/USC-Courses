@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ShippingTabTitle"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:text="Shipping Infomation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/blackColor"
+        android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/HandlingTime"
+            style="@android:style/Widget.DeviceDefault.Light.TextView"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/ShippingTabTitle"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:paddingTop="5dp"
+            android:text="•Handling Time:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/wordInSearch"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/HandlingTimeRet"
+            style="@android:style/Widget.DeviceDefault.Light.TextView"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/ShippingTabTitle"
+            android:layout_toRightOf="@id/HandlingTime"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:paddingTop="5dp"
+            android:text="Not Specified"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/wordInSearch"
+            android:textSize="15dp" />
+
+        <TextView
+        android:id="@+id/OneDayShipping"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/HandlingTime"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="•One Day Shipping Avaliable:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/OneDayShippingRET"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/HandlingTime"
+        android:layout_toRightOf="@id/OneDayShipping"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="No"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+
+    <TextView
+        android:id="@+id/shippingType"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/OneDayShipping"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="•Shipping Type:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/shippingTypeRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/OneDayShipping"
+        android:layout_toRightOf="@id/shippingType"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/shippingFrom"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/shippingType"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="•Shipping From:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/shippingFromRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/shippingType"
+        android:layout_toRightOf="@id/shippingFrom"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/shippingTo"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/shippingFrom"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="•Shipping To Location:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/ShippingToRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/shippingFrom"
+        android:layout_toRightOf="@id/shippingTo"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="Not Specified"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/expeditedShipping"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/shippingTo"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="•Expedited Shipping:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/expeditedShippingRet"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/shippingTo"
+        android:layout_toRightOf="@id/expeditedShipping"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="No"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/wordInSearch"
+        android:textSize="15dp" />
+
+
+
+
+</RelativeLayout>
