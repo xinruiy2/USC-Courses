@@ -1,0 +1,7 @@
+For firebase-A.py, it uses 1 request calls to retrieve all country data in country.json that is in north america, the length of data is 15689; then it use 26 request calls, which is the number of countries that is in country.json and is in north america. Each call returns one captial city for that country from city.json, the length of these 26 request calls is 3452
+
+For firebase-B.py, it uses 1 request calls to retrieve all country data in country.json that is in north america, the lenght of data is 15689; then it use 26 request calls, which is the number of countries that is in country.json and is in north america. Each call returns one countries languages for that country from countrylanguage.json, the length of these 26 request calls is 5522 
+
+For firebase-B-nested.py, it uses 1 request calls and it retrieves all country data in country_nested.json that is in north america, the length of data is 25945. Comparing to firebase-B.py, it use way less request calls and the size of data downloaded is about the same in total.
+
+For firebase-C.py, it uses one request calls and it retrieves one JSON files on firebase - country.json, the length of data is 73781.
