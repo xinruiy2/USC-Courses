@@ -1,0 +1,12 @@
+2. db.country.aggregate({$lookup: {from:'city', localField: 'Capital', foreignField:"ID", as: 'res'}}, {$match: {Continent: 'North America'}}, {$project: {'conuntry_name': '$Name', 'capital_name': '$res.Name', '_id': 0}}, {$sort: {'conuntry_name': 1}}, {$limit: 10})
+
+
+3. db.country.aggregate({$match:{"Continent":"North America"}},{$lookup:{from:"countrylanguage", localField:"Code", foreignField: "CountryCode", as: "lan"}},{$project:{_id:0, Name:1, "lan": {$filter:{input:"$lan", as:"off", cond:{$eq:["$$off.IsOfficial","T"]}}}}}, {$match:{"lan":{$ne:[]}}} , {$project:{Name:1, "lan.Language":1}},{$limit:10})
+
+3a. db.countrylanguage.aggregate({$match:{"IsOfficial":/T/}},{$lookup:{from:"country",localField:"CountryCode",foreignField:"Code",as:'res'}},{$match:{"res.Continent":/North America/i}},{$limit:10},{$sort:{"res.Name":1}},{$project:{"res.Name": 1,Language: 1, _id:0}})
+
+
+4. db.country.aggregate({$match: {GNP: {$gt: 10000}}}, {$group: {_id: '$Continent', average_life: {$avg: '$LifeExpectancy'}}})
+
+
+5. db.countrylanguage.aggregate({$match: {Language: 'French', IsOfficial: 'T'}}, {$lookup: {from: 'country', localField: 'CountryCode', foreignField: 'Code', as: 'res'}}, {$group: {_id: '$res.Continent', number: {$sum:1}}})
