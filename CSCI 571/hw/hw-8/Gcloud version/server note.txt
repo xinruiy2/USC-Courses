@@ -1,3 +1,0 @@
-This server should be developed on gcloud.
-
-One is angular app and on is the node.js server in server.
